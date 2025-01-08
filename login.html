@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Toko Sepatu Wanita Sedal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Login Toko Sepatu Wanita Sedal</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="profil.html">Profil</a>
+            <a href="transaksi.html">Transaksi</a>
+        </nav>
+    </header>
+
+    <section class="login-section">
+        <h2>Masuk ke Akun Anda</h2>
+        <form id="loginForm" action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <div id="message" class="message"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Toko Sepatu Wanita Sedal | Semua Hak Cipta Dilindungi</p>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var successMessage = document.getElementById("message");
+
+            // Validasi login (hardcoded username dan password)
+            if (username === "user123" && password === "pass123") {
+                successMessage.style.color = "green";
+                successMessage.innerHTML = "Login Berhasil! Arahkan ke halaman Transaksi...";
+                setTimeout(function() {
+                    window.location.href = "transaksi.html"; // Redirect ke halaman transaksi
+                }, 2000);
+            } else {
+                successMessage.style.color = "red";
+                successMessage.innerHTML = "Username atau Password salah!";
+            }
+        });
+    </script>
+</body>
+</html>
